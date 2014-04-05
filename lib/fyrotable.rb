@@ -1,4 +1,3 @@
-require "debugger"
 require "fyrotable/version"
 require "fyrotable/table_builder"
 require "fyrotable/table"

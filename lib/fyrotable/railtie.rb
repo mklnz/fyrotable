@@ -5,11 +5,5 @@ module Fyrotable
     initializer "fyrotable.view_helpers" do
       ActionView::Base.send :include, ViewHelpers
     end
-
-    def self.setup
-      Fyrotable.load_paths.each do |load_path|
-        config.watchable_dirs[load_path] = [:rb]
-      end
-    end
   end
 end

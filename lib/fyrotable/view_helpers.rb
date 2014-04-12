@@ -28,7 +28,16 @@ module Fyrotable
         end
       end
 
-      content_tag :table, thead.concat(tbody), class: table.options[:class]
+      if records.respond_to? :current_page
+        paging = paginate records
+      end
+      table_content = content_tag :table, thead.concat(tbody), class: table.options[:class]
+
+      if paging
+        paging.concat(table_content)
+      else
+        table_content
+      end
     end
   end
 end
